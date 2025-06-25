@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Truth of the World - Uncover Forbidden Knowledge</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: #0a0a0a; /* Darker background for depth */
+        color: #e0e0e0;
+        text-align: center;
+        line-height: 1.6;
+      }
+      header {
+        padding: 3rem 1rem 2rem; /* More vertical padding */
+        background: #151515; /* Slightly lighter than body for contrast */
+        border-bottom: 3px solid #ff004f; /* Accent line */
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        color: #ff004f;
+        font-size: 2.8rem; /* Larger heading */
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 15px rgba(255, 0, 79, 0.5); /* Subtle glow */
+      }
+      header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 1rem auto 2rem;
+      }
+      .cover {
+        max-width: 280px; /* Slightly larger cover */
+        border-radius: 15px; /* Softer corners */
+        box-shadow: 0 0 30px #ff004fcc, 0 0 15px #ff004f66; /* More prominent glow */
+        margin: 2rem auto;
+        display: block; /* Ensures centering */
+        transition: transform 0.3s ease-in-out;
+      }
+      .cover:hover {
+        transform: scale(1.03); /* Slight zoom on hover */
+      }
+      .btn {
+        background: #ff004f;
+        color: white;
+        padding: 1.2rem 3rem; /* Larger button */
+        border: none;
+        border-radius: 10px; /* Softer corners */
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin: 2.5rem 0 1.5rem; /* More spacing */
+        transition: background 0.3s ease, transform 0.2s ease;
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .btn:hover {
+        background: #e60046; /* Darker pink on hover */
+        transform: translateY(-3px); /* Subtle lift effect */
+        box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
+      }
+      section {
+        padding: 2.5rem 1rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      section:nth-of-type(even) {
+        background: #111; /* Alternate background for sections */
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        color: #ff004f;
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 10px rgba(255, 0, 79, 0.3);
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem; /* Space between list items */
+      }
+      ul li {
+        margin: 0; /* Reset default margin */
+        padding: 0.8rem 1.2rem;
+        background: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        flex: 1 1 calc(50% - 3rem); /* Two columns on larger screens */
+        min-width: 280px; /* Minimum width before wrapping */
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+      }
+      ul li::before {
+        content: "✓"; /* Custom bullet point */
+        color: #00ff7f; /* Green checkmark */
+        font-weight: bold;
+        font-size: 1.3em;
+        line-height: 1;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .benefit-item {
+        background: #1a1a1a;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        text-align: left;
+      }
+      .benefit-item h3 {
+        color: #00ff7f; /* Green for benefits */
+        font-size: 1.3rem;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .benefit-item h3::before {
+        content: "🌟"; /* Star icon */
+        font-size: 1.5em;
+        line-height: 1;
+      }
+
+      .testimonials {
+        background: #000;
+        padding: 3rem 1rem;
+      }
+      .testimonial-card {
+        background: #1a1a1a;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        text-align: left;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .testimonial-card p {
+        font-style: italic;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+      .testimonial-card .author {
+        font-weight: bold;
+        color: #ff004f;
+        font-size: 1rem;
+      }
+      .guarantee {
+        background: #1a1a1a;
+        padding: 2.5rem 1rem;
+        border-top: 3px solid #00ff7f;
+        border-bottom: 3px solid #00ff7f;
+      }
+      .guarantee p {
+        font-size: 1.3rem;
+        color: #00ff7f;
+        font-weight: bold;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        padding: 2rem;
+        color: #888; /* Softer footer text */
+        background: #000;
+        border-top: 1px solid #333;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+        .btn {
+          padding: 1rem 2rem;
+          font-size: 1rem;
+        }
+        ul li {
+          flex: 1 1 100%; /* Single column on smaller screens */
+          min-width: unset;
+        }
+        .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The Truth of the World</h1>
+      <p>
+        Uncover forbidden knowledge, ancient secrets, and elite conspiracies in
+        this 324 page ebook that will change your perception of reality.
+      </p>
+      <img
+        class="cover"
+        src="/PORTADA.png"
+        alt="The Truth of the World Ebook Cover"
+      />
+      <a class="btn" href="https://go.hotmart.com/S100481022U"
+        >Get Instant Access Now!</a
+      >
+      <p style="font-size: 0.9rem; margin-top: 1rem; color: #aaa">
+        Secure Download via Hotmart.
+      </p>
+    </header>
+
+    <section>
+      <h2>Why You Need to Uncover the Truth</h2>
+      <p>
+        Have you ever felt like there's more to reality than meets the eye? Are
+        you tired of conventional narratives and eager to explore the hidden
+        forces shaping our world? "The Truth of the World" is your essential
+        guide to understanding the forbidden knowledge that powerful elites
+        don't want you to know.
+      </p>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <h3>See Beyond the Veil</h3>
+          <p>
+            Gain clarity on the true mechanisms of global power and how hidden
+            societies influence your daily life.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <h3>Unlock Ancient Wisdom</h3>
+          <p>
+            Journey through forgotten civilizations and discover the secrets
+            behind myths like Atlantis, revealing their profound impact on human
+            history.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <h3>Master Your Mind</h3>
+          <p>
+            Understand the techniques of mind control and reality distortion,
+            empowering you to take back control of your perceptions.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <h3>Explore the Unexplained</h3>
+          <p>
+            Dive deep into censored science, UFO phenomena, the Nephilim, and
+            other suppressed truths that challenge mainstream understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Inside This Explosive 324-Page Ebook:</h2>
+      <ul>
+        <li>👁 Hidden Elites & Global Power: Who truly pulls the strings?</li>
+        <li>🏺 Lost Civilizations & Atlantis: Rewriting human history.</li>
+        <li>
+          🧠 Mind Control & Reality Distortion: Protect your consciousness.
+        </li>
+        <li>🛸 UFOs, Nephilim, & Censored Science: The suppressed facts.</li>
+        <li>📜 Secret Societies & Their Agendas: Unmasking the unseen.</li>
+        <li>🌌 Cosmic Truths & Human Origins: Where do we really come from?</li>
+      </ul>
+      <a class="btn" href="https://go.hotmart.com/S100481022U"
+        >Discover the Forbidden Knowledge</a
+      >
+    </section>
+
+    <section class="testimonials">
+      <h2>What Others Are Saying</h2>
+      <div class="testimonial-card">
+        <p>
+          "Absolutely mind-blowing! This book connected so many dots I never
+          knew existed. It's a must-read for anyone seeking genuine truth."
+        </p>
+        <div class="author">- Alex R., Seeker of Truth</div>
+      </div>
+      <div class="testimonial-card">
+        <p>
+          "I was skeptical at first, but the depth of research and insights are
+          unparalleled. My perspective on the world has completely shifted."
+        </p>
+        <div class="author">- Maria G., Awakened Mind</div>
+      </div>
+      <div class="testimonial-card">
+        <p>
+          "If you're ready to question everything and truly understand the world
+          around you, don't hesitate. This ebook delivers!"
+        </p>
+        <div class="author">- John P., Independent Researcher</div>
+      </div>
+    </section>
+
+    <section class="guarantee">
+      <h2>Our Ironclad Guarantee</h2>
+      <p>
+        Your satisfaction is our priority. If you're not completely astonished
+        by the revelations within "The Truth of the World" within 7 days of
+        purchase, simply contact us for a full, no-questions-asked refund via
+        Hotmart. Your journey into truth is risk-free!
+      </p>
+    </section>
+
+    <section class="final-cta">
+      <h2>Don't Live in Ignorance Any Longer.</h2>
+      <p>
+        The time to awaken is now. Join countless others who have dared to look
+        beyond the illusions and embrace the raw, unfiltered truth. This
+        324-page masterpiece is waiting for you.
+      </p>
+      <a class="btn" href="https://go.hotmart.com/S100481022U"
+        >Yes, I Want the Truth!</a
+      >
+      <p style="font-size: 0.9rem; margin-top: 1rem; color: #aaa">
+        Secure & Instant Download. No physical product will be shipped.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 The Truth of the World. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
